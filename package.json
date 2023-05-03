@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://VadBorovec.github.io/cinemania-draft",
   "scripts": {
-    "start": "parcel src/*.html",
+    "start": "parcel src/*.html --open",
     "build": "parcel build src/*.html --public-url /cinemania-draft/"
   },
   "repository": {
@@ -18,12 +18,19 @@
     "url": "https://github.com/VadBorovec/cinemania-draft/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "axios": "^1.3.5",
+    "handlebars": "^4.7.7",
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.6",
+    "simplelightbox": "^2.13.0",
+    "swiper": "^9.2.4"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
+    "parcel-transformer-hbs": "^1.0.4",
     "posthtml-include": "^1.7.4"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
