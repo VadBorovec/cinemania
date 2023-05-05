@@ -3,7 +3,7 @@ import axios from 'axios';
 // import 'swiper/css/swiper.min.css';
 import { API_KEY, BASE_URL, URL_TREND_DAY } from '../constants/api';
 import { ROOT_HERO_CONTAINER } from '../constants/root';
-import { fetchTrendingMovies } from '../utils/fetchTrendHero';
+import { fetchTrendingMovies } from '../utils/fetchTrendDay';
 
 // import '../../sass/components/Hero.scss';
 
