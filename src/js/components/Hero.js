@@ -23,22 +23,21 @@ async function createMovieCardMarkup(movie) {
       : 'openModal()';
 
     return `
-      <div class="hero-trend__wrap swiper-slide">
-        <div class="hero-trend__bgd" style="background-image: url('${image}')"></div>
-        <div class="hero-trend__info hero-trend__info-light container">
-          <div class="hero-trend__details hero-trend__details-light">
-            <h2 class="hero-trend__title">${
+      <div class="hero__wrap swiper-slide">
+        <div class="hero__bgd" style="background-image: url('${image}');"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__info">
+          <div class="hero__details">
+            <h2 class="hero__title">${
               title.length > 25 ? title.substring(0, 25) + '...' : title
             }</h2>
-            <div class="hero-trend__rating ${stars(
-              Number(rating.toFixed(1))
-            )}"></div>
-            <p class="hero-trend__overview hero-trend__overview-light">${
+            <div class="hero__rating ${stars(Number(rating.toFixed(1)))}"></div>
+            <p class="hero__overview">${
               overview.length > 300
                 ? overview.substring(0, 300) + '...'
                 : overview
             }</p>
-            <button id="modal-trigger" type="button" class="hero-trend__btn" onclick="${
+            <button id="modal-trigger" type="button" class="hero__btn" onclick="${
               trailerLink
                 ? `window.open('${trailerLink}', '_blank')`
                 : 'openModal()'
@@ -140,14 +139,14 @@ async function renderTrendingMovies() {
 
 export function defaultHeroMarkup() {
   ROOT_HERO_CONTAINER.innerHTML = `
-      <div class="hero-trend__wrap">
-      <div class="hero-trend__bgd hero-trend__bgd-default"></div>
-        <div class="hero-trend__info">
-          <div class="hero-trend__details" >
-            <h2 class="hero-trend__title">Let's Make Your Own Cinema</h2>
-            <p class="hero-trend__overview">Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.</p>
-            <button class="hero-trend__btn">
-              <a href="./catalog.html" class="hero-trend__btn-link">Get Started</a>
+      <div class="hero__wrap">
+      <div class="hero__bgd hero__bgd-default"></div>
+        <div class="hero__info">
+          <div class="hero__details" >
+            <h2 class="hero__title">Let's Make Your Own Cinema</h2>
+            <p class="hero__overview">Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.</p>
+            <button class="hero__btn">
+              <a href="./catalog.html" class="hero__btn-link">Get Started</a>
             </button>
           </div>
         </div>
@@ -163,36 +162,39 @@ renderTrendingMovies();
 //   window.open(url, '_blank');
 // }
 
-// ! to open modal
-function openModal() {
-  const modal = document.getElementById('modal');
-  modal.style.display = 'block';
-}
+// =========================================
+// Винести код для модальних вікон в окремий файл
+// =========================================
+// // ! to open modal
+// function openModal() {
+//   const modal = document.getElementById('modal');
+//   modal.style.display = 'block';
+// }
 
-// Get the Modal Overlay and Modal Content elements
-const modalOverlay = document.getElementById('modal-overlay');
-const modal = document.getElementById('modal');
+// // Get the Modal Overlay and Modal Content elements
+// const modalOverlay = document.getElementById('modal-overlay');
+// const modal = document.getElementById('modal');
 
-// Get the Modal Trigger Button and Modal Close Button elements
-const modalTrigger = document.getElementById('modal-trigger');
-const modalClose = document.getElementById('modal-close');
+// // Get the Modal Trigger Button and Modal Close Button elements
+// const modalTrigger = document.getElementById('modal-trigger');
+// const modalClose = document.getElementById('modal-close');
 
-// Add a click event listener to the Modal Trigger Button
-modalTrigger.addEventListener('click', () => {
-  // Show the Modal Overlay
-  modalOverlay.style.display = 'block';
-});
+// // Add a click event listener to the Modal Trigger Button
+// modalTrigger.addEventListener('click', () => {
+//   // Show the Modal Overlay
+//   modalOverlay.style.display = 'block';
+// });
 
-// Add a click event listener to the Modal Close Button
-modalClose.addEventListener('click', () => {
-  // Hide the Modal Overlay
-  modalOverlay.style.display = 'none';
-});
+// // Add a click event listener to the Modal Close Button
+// modalClose.addEventListener('click', () => {
+//   // Hide the Modal Overlay
+//   modalOverlay.style.display = 'none';
+// });
 
-// Add a click event listener to the Modal Overlay (to close the modal if clicked outside of it)
-modalOverlay.addEventListener('click', event => {
-  if (event.target === modalOverlay) {
-    // Hide the Modal Overlay
-    modalOverlay.style.display = 'none';
-  }
-});
+// // Add a click event listener to the Modal Overlay (to close the modal if clicked outside of it)
+// modalOverlay.addEventListener('click', event => {
+//   if (event.target === modalOverlay) {
+//     // Hide the Modal Overlay
+//     modalOverlay.style.display = 'none';
+//   }
+// });
