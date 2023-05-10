@@ -49,6 +49,9 @@ export function createMarkUp(array) {
   const markup = array
     .map(
       ({ title, genre_ids, release_date, poster_path, vote_average, id }) => {
+        const poster = poster_path
+          ? poster_path
+          : `https://i0.wp.com/capri.org.au/wp-content/uploads/2017/10/poster-placeholder.jpg`;
         return `<li class="gallery-item" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, 0.9) 92.16%), url(https://image.tmdb.org/t/p/w500${poster_path})" data-id=${id}><div class="gallery-item__about"><h3 class="gallery-item__about__title">${title}</h3><p class="gallery-item__about__p">${getGenreForCard(
           genre_ids
         )} | ${release_date.slice(
