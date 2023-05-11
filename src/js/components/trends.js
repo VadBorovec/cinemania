@@ -4,15 +4,11 @@ import {
   URL_TREND_WEEK,
   URL_GENRE_LIST,
 } from '../constants/api';
-// import { getTrendMoviesOfWeek } from './gallery';
 import axios from 'axios';
 
-const weekTrendsEl = document.getElementById('trends-list');
+export const weekTrendsEl = document.getElementById('trends-list');
 
 let currentPage = 1;
-let arrayTrendsWeek = [];
-
-let genresListArray = [];
 let idsArray = [];
 let categorysArray = [];
 
@@ -48,7 +44,7 @@ async function getTrendMoviesOfWeek() {
   }
 }
 
-export function createMarkUp(array) {
+function createMarkUp(array) {
   const markup = array
     .map(
       ({ title, genre_ids, release_date, poster_path, vote_average, id }) => {

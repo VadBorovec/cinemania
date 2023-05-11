@@ -38,11 +38,7 @@ async function createMovieCardMarkup(movie) {
             class="hero__btn"
             id="modal-trigger"
             type="button"
-            onclick="${
-              trailerLink
-                ? `window.open('${trailerLink}', '_blank')`
-                : 'openModal()'
-            }"
+             data-id="${id}"
           >
             Watch trailer
           </button>
@@ -55,7 +51,6 @@ async function createMovieCardMarkup(movie) {
   }
 }
 
-// window.open('${trailerLink}', '_blank');
 // to render Rating in stars
 function stars(vote) {
   if (vote === 10) {
@@ -140,13 +135,16 @@ async function renderTrendingMovies() {
 
 export function defaultHeroMarkup() {
   ROOT_HERO_CONTAINER.innerHTML = `
-      <div class="hero__wrap">
-      <div class="hero__bgd hero__bgd-default"></div>
-        <div class="hero__info">
-          <div class="hero__details">
-            <h2 class="hero__title">Let's Make Your Own Cinema</h2>
+      <div class="hero__card hero__card-error">
+      <div class="hero__img-error"></div>
+          <div class="hero__details hero__details-error">
+            <h2 class="hero__title hero__title-error">Let's Make Your Own Cinema</h2>
             <p class="hero__overview">Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.</p>
-            <a href="./catalog.html" class="hero__btn hero__btn-link">Get Started</a>
+            <a href="./catalog.html">
+            <button class="hero__btn" type="button">
+            Get Started
+          </button>
+          </a>
           </div>
         </div>
     </div>
@@ -155,45 +153,3 @@ export function defaultHeroMarkup() {
 
 // Call renderTrendingMovies to initially render trending movies
 renderTrendingMovies();
-
-//! IDN doesn't work - openLinkInNewTab(url)
-// function openLinkInNewTab(url) {
-//   window.open(url, '_blank');
-// }
-
-// =========================================
-// Винести код для модальних вікон в окремий файл
-// =========================================
-// // ! to open modal
-// function openModal() {
-//   const modal = document.getElementById('modal');
-//   modal.style.display = 'block';
-// }
-
-// // Get the Modal Overlay and Modal Content elements
-// const modalOverlay = document.getElementById('modal-overlay');
-// const modal = document.getElementById('modal');
-
-// // Get the Modal Trigger Button and Modal Close Button elements
-// const modalTrigger = document.getElementById('modal-trigger');
-// const modalClose = document.getElementById('modal-close');
-
-// // Add a click event listener to the Modal Trigger Button
-// modalTrigger.addEventListener('click', () => {
-//   // Show the Modal Overlay
-//   modalOverlay.style.display = 'block';
-// });
-
-// // Add a click event listener to the Modal Close Button
-// modalClose.addEventListener('click', () => {
-//   // Hide the Modal Overlay
-//   modalOverlay.style.display = 'none';
-// });
-
-// // Add a click event listener to the Modal Overlay (to close the modal if clicked outside of it)
-// modalOverlay.addEventListener('click', event => {
-//   if (event.target === modalOverlay) {
-//     // Hide the Modal Overlay
-//     modalOverlay.style.display = 'none';
-//   }
-// });

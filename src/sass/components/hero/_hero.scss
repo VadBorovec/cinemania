@@ -47,9 +47,17 @@
       background-image: var(--hero-bg-tab);
       background-size: cover;
     }
-    @include tablet {
+    @include desktop {
       background-image: var(--hero-bg-desk);
+      background-size: cover;
     }
+  }
+}
+
+.hero__card-error {
+  @include desktop {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -65,6 +73,43 @@
     grid-column: 2 / 4;
 
     object-position: right center;
+  }
+
+  @include desktop {
+    grid-column: 2 / 4;
+
+    object-position: right center;
+  }
+}
+
+.hero__img-error {
+  grid-column: 1 / 4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-image: url(../images/hero/hero-bgd-stranger-tablet-1x.jpg);
+
+  @include retina {
+    background-image: url(../images/hero/hero-bgd-stranger-tablet-2x.jpg);
+  }
+  @include tablet {
+    grid-column: 2 / 4;
+    object-position: right center;
+    background-image: url(../images/hero/hero-bgd-stranger-tablet-1x.jpg);
+  }
+  @include retina {
+    background-image: url(../images/hero/hero-bgd-stranger-tablet-2x.jpg);
+  }
+
+  @include desktop {
+    background-position: right;
+    grid-column: 1 / 4;
+    object-position: right center;
+    background-image: url(../images/hero/hero-bgd-stranger-desktop-1x.jpg);
+  }
+  @include retina {
+    background-image: url(../images/hero/hero-bgd-stranger-desktop-2x.jpg);
   }
 }
 
@@ -86,6 +131,27 @@
   @include desktop {
     width: 367px;
     transform: translateX(-156%);
+    color: var(--primary-text-color);
+  }
+}
+.hero__details-error {
+  position: absolute;
+  top: 40px;
+  left: 68%;
+  transform: translateX(-70%);
+
+  @include tablet {
+    top: 62px;
+    left: 50%;
+    width: 357px;
+    transform: translateX(-96%);
+  }
+
+  @include desktop {
+    top: 169px;
+    left: 50%;
+    width: 464px;
+    transform: translateX(-130%);
   }
 }
 
@@ -107,6 +173,10 @@
     font-size: 64px;
     margin-bottom: 16px;
   }
+}
+
+.hero__title-error {
+  -webkit-line-clamp: 2;
 }
 
 .hero__rating {
@@ -142,6 +212,7 @@
 
   @include desktop {
     -webkit-line-clamp: 5;
+    color: var(--secondary-text-color);
   }
 }
 
@@ -154,7 +225,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  // color: #000;
+  color: #111;
 
   background-color: transparent;
   background-position: -100%;
@@ -335,39 +406,3 @@
 
   @include heroStarsDesk;
 }
-
-// !====modal
-
-// /* Hide the Modal Overlay by default */
-// #modal-overlay {
-//   display: none;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0.5);
-//   z-index: 1;
-// }
-
-// /* Center the Modal Content */
-// #modal {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   background-color: #fff;
-//   padding: 20px;
-//   border-radius: 5px;
-//   z-index: 2;
-// }
-
-// /* Style the Modal Close Button */
-// #modal-close {
-//   margin-top: 10px;
-//   padding: 5px 10px;
-//   background-color: #ccc;
-//   border: none;
-//   border-radius: 3px;
-//   cursor: pointer;
-// }

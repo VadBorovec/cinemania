@@ -4,5 +4,8 @@ import './js/components/upcoming';
 import './js/components/trends';
 import './js/components/scroll-to-top';
 
-// Modals
+import './js/components/upcoming';
+import './js/components/trends';
+// import './js/components/footer';
+// Mmodals
 import './js/components/modals';
