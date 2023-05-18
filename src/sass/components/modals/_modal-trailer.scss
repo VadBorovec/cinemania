@@ -92,16 +92,6 @@ body.show-trailer-modal .trailer-modal__backdrop {
     border: none;
     padding: 0px;
 
-    color: var(--close-icon);
-
-    transform: rotate(45deg);
-
-    transition: color 300ms ease-out;
-
-    &:hover {
-      color: var(--accent-color);
-    }
-
     @include tablet {
       top: 20px;
       right: 24px;
@@ -110,6 +100,16 @@ body.show-trailer-modal .trailer-modal__backdrop {
     @include desktop {
       top: 20px;
       right: 28px;
+    }
+  }
+
+  &__img-colse {
+    fill: var(--close-icon);
+
+    transition: fill 300ms ease-out;
+
+    &:hover {
+      fill: var(--accent-color);
     }
   }
 }

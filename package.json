@@ -1,21 +1,21 @@
 {
-  "name": "cinemania-draft",
+  "name": "cinemania",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://VadBorovec.github.io/cinemania-draft",
+  "homepage": "https://VadBorovec.github.io/cinemania",
   "scripts": {
     "start": "parcel src/*.html --open",
-    "build": "parcel build src/*.html --public-url /cinemania-draft/"
+    "build": "parcel build src/*.html --public-url /cinemania/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VadBorovec/cinemania-draft.git"
+    "url": "git+https://github.com/VadBorovec/cinemania.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VadBorovec/cinemania-draft/issues"
+    "url": "https://github.com/VadBorovec/cinemania/issues"
   },
   "dependencies": {
     "axios": "^1.4.0",
@@ -30,7 +30,6 @@
     "tui-pagination": "^3.4.1"
   },
   "devDependencies": {
-    "@parcel/packager-xml": "^2.6.0",
     "@parcel/transformer-sass": "^2.6.0",
     "@parcel/transformer-webmanifest": "^2.6.0",
     "@parcel/transformer-xml": "^2.6.0",
