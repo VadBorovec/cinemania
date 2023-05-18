@@ -3,6 +3,8 @@ import { ROOT_HERO_CONTAINER } from '../constants/root';
 import { fetchTrendingMovies, getTrailer } from '../utils/fetchTrendDay';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
+// rename Hero.js to hero.js
+
 // Function to create markup for a single movie
 async function createMovieCardMarkup(movie) {
   const image = movie.backdrop_path
